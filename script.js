@@ -285,21 +285,6 @@
 
     servicesLeft.appendChild(carousel);
 
-    // Bottom icons
-    const bottomIcons = document.createElement('div');
-    bottomIcons.className = 'mobile-bottom-icons';
-    bottomIcons.innerHTML = `
-      <div class="mobile-bottom-icon">
-        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        <span>CODE</span>
-      </div>
-      <div class="mobile-bottom-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        <span>DESIGN</span>
-      </div>
-    `;
-    servicesLeft.appendChild(bottomIcons);
-
     // ── Carousel logic ──
     currentIndex = 0;
 
