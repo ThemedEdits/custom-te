@@ -261,11 +261,11 @@
     swipeHint.className = 'mobile-swipe-hint';
     swipeHint.innerHTML = `
       <div class="swipe-arrow" id="prevBtn">
-        <img src="img/swiperp.svg" alt="Previous" style="width:36px;height:36px;transform:scaleX(-1);filter:brightness(0) invert(1);opacity:0.6;" />
+        <img src="/img/swiperp.svg" alt="Previous" style="width:36px;height:36px;filter:brightness(0) invert(1);opacity:0.6;" />
       </div>
       <span class="swipe-label">SWIPE FOR MORE</span>
       <div class="swipe-arrow" id="nextBtn">
-        <img src="img/swipern.svg" alt="Next" style="width:36px;height:36px;filter:brightness(0) invert(1);opacity:0.6;" />
+        <img src="/img/swipern.svg" alt="Next" style="width:36px;height:36px;filter:brightness(0) invert(1);opacity:0.6;" />
       </div>
     `;
 
