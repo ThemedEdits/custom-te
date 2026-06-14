@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailored Edits – Perfect Themes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR — fixed fullscreen overlay, sits above everything ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+
+      <div class="nav-logo">
+        <img src="img/te-logo.png" alt="TE Logo" height="52" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#" class="nav-link active">HOME</a></li>
+        <li><a href="#" class="nav-link">WEB PORTFOLIO</a></li>
+        <li><a href="#" class="nav-link">GRAPHIC PORTFOLIO</a></li>
+        <li><a href="#" class="nav-link">WHO AM I?</a></li>
+        <li><a href="#" class="nav-link">HIRE ME NOW!</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- ===== RIGHT SIDE DOCK — fixed, always on top ===== -->
+  <div class="side-dock">
+    <div class="dock-item">
+      <div class="dock-tooltip">VIEW WEB PORTFOLIO</div>
+      <a href="#" class="dock-btn">
+        <img src="img/svgs (1).svg" alt="Web Portfolio" class="dock-svg" />
+      </a>
+    </div>
+    <div class="dock-item">
+      <div class="dock-tooltip">VIEW GRAPHIC PORTFOLIO</div>
+      <a href="#" class="dock-btn">
+        <img src="img/svgs (2).svg" alt="Graphic Portfolio" class="dock-svg" />
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== PAGE WRAPPER — content pushed down by topbar height ===== -->
+  <div class="page-wrapper" id="pageWrapper">
+
+    <!-- ===== TOPBAR — fixed, always visible ===== -->
+    <header class="topbar">
+      <div class="topbar-logo">
+        <img src="img/te-logo.png" alt="TE Logo" height="48" />
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open Menu">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-gray">TAILORED</span> <span class="title-white">EDITS</span><br>
+          <span class="title-gray">PERFECT</span> <span class="title-white">THEMES</span>
+        </h1>
+        <p class="hero-sub">WANT A <span class="accent flip-wrapper"><span class="flip-track"><span>CUSTOM
+                LOGO</span><span>SOCIAL MEDIA POSTER</span><span>LANDING PAGE</span><span>MENU DESIGN</span><span>BRAND
+                IDENTITY</span><span>CUSTOM LOGO</span></span></span>?</p>
+        <div class="hero-btns">
+          <a href="#" class="btn btn-outline">HIRE ME</a>
+          <a href="#" class="btn btn-solid">WHO AM I?</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services-section">
+
+      <div class="services-tabs">
+        <button class="tab-btn active" data-tab="graphic">GRAPHIC DESIGN</button>
+        <button class="tab-btn" data-tab="web">WEB DESIGN</button>
+      </div>
+
+      <div class="services-body">
+        <div class="services-left">
+          <h2 class="services-heading">SERVICES</h2>
+          <ul class="services-list">
+            <li class="service-item" data-img="img/social-media.jpg">SOCIAL MEDIA POST</li>
+            <li class="service-item" data-img="img/logo.jpg">CUSTOM LOGO</li>
+            <li class="service-item" data-img="img/menu.jpg">MENU DESIGN</li>
+            <li class="service-item" data-img="img/visiting-card.jpg">VISITING CARD DESIGN</li>
+            <li class="service-item" data-img="img/brand.jpg">BRAND IDENTITY</li>
+          </ul>
+        </div>
+
+        <!-- Service preview image (cross-fade layers injected by JS) -->
+        <div class="service-preview" id="servicePreview"></div>
+      </div>
+
+    </section>
+
+  </div><!-- /page-wrapper -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
