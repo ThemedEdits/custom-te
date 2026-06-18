@@ -1308,8 +1308,8 @@ body.nav-open .hamburger span:nth-child(2) {
 .contact-input-float:focus {
   background: #141414;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
-   inset -4px -4px 8px rgba(0, 0, 0, 0.6),
-  inset 0 2px 4px rgba(255, 255, 255, 0.08);
+    inset -4px -4px 8px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.08);
 }
 
 .contact-float-label {
@@ -1338,9 +1338,10 @@ body.nav-open .hamburger span:nth-child(2) {
   background: #141414;
   color: var(--gold);
 }
-.contact-input-float:-webkit-autofill + .contact-float-label,
-.contact-input-float:-webkit-autofill:hover + .contact-float-label,
-.contact-input-float:-webkit-autofill:focus + .contact-float-label {
+
+.contact-input-float:-webkit-autofill+.contact-float-label,
+.contact-input-float:-webkit-autofill:hover+.contact-float-label,
+.contact-input-float:-webkit-autofill:focus+.contact-float-label {
   top: -14px;
   transform: translateY(0);
   font-size: 0.6rem;
