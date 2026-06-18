@@ -11,8 +11,6 @@
   const serviceItems = document.querySelectorAll('.service-item');
   const preview = document.getElementById('servicePreview');
 
-
-
   /* ── Build two image layers inside .service-preview ─────
      Layer A and Layer B alternate so we can cross-fade
      between any two images without a flash.               */
@@ -103,7 +101,7 @@
     const list = document.querySelector('.services-list');
     const items = servicesData[currentTab];
     list.innerHTML = '';
-    items.forEach(item => {
+    items.forEach((item, i) => {
       const li = document.createElement('li');
       li.className = 'service-item';
       li.setAttribute('data-img', item.img);
@@ -129,37 +127,29 @@
     });
   }
 
-  /* ── Navbar open / close ────────────────────────────────
-     The hamburger is always on top (topbar z-index 600).
-     The navbar slides in from behind it (z-index 500).
-     Hamburger animates to a cross via CSS when body.nav-open
-     is set — no separate close button needed.
-  ─────────────────────────────────────────────────────── */
+  /* ── Navbar open / close ────────────────────────────────*/
   function openNav() {
     navbar.classList.add('open');
     document.body.classList.add('nav-open');
+    document.documentElement.classList.add('nav-open');
     hamburger.setAttribute('aria-expanded', 'true');
     hamburger.setAttribute('aria-label', 'Close Menu');
-    // Wait for navbar to slide in, then animate links
     setTimeout(() => navbar.classList.add('links-visible'), 600);
   }
 
   function closeNav() {
     document.body.classList.remove('nav-open');
+    document.documentElement.classList.remove('nav-open');
     hamburger.setAttribute('aria-expanded', 'false');
     hamburger.setAttribute('aria-label', 'Open Menu');
 
-    // Lock links in place and fade opacity only
     navbar.classList.add('links-hiding');
     navbar.classList.remove('links-visible');
 
-    // After links fade out, slide navbar down — keep links-hiding on during slide
     setTimeout(() => {
       navbar.classList.add('closing');
-
       navbar.addEventListener('transitionend', function handler(e) {
         if (e.propertyName !== 'transform') return;
-        // Full cleanup only after navbar finishes sliding
         navbar.classList.remove('open', 'closing', 'links-hiding');
         navbar.style.transition = 'none';
         navbar.style.transform = 'translateY(-100%)';
@@ -179,13 +169,10 @@
     if (e.key === 'Escape' && navbar.classList.contains('open')) closeNav();
   });
 
-  /* ── Placeholder colours (used when no real image set) ─*/
+  /* ── Placeholder colours ────────────────────────────────*/
   const PLACEHOLDER_COLORS = ['#d44', '#4a8', '#48d', '#a4d', '#da4'];
 
-  /* ── Cross-fade helper ──────────────────────────────────
-     Swaps pending/active image layers so every service
-     switch gets a smooth fade, not just the first one.
-  ─────────────────────────────────────────────────────── */
+  /* ── Cross-fade helper ──────────────────────────────────*/
   function showImage(src, fallbackColor) {
     if (src === currentSrc) return;
 
@@ -208,13 +195,6 @@
     currentSrc = src;
   }
 
-  /* ── Service hover with vertical mouse tracking ─────────
-     On mouseenter: record the mouse's clientY and set the
-     preview's `top` to that value so the image top aligns
-     with where the cursor entered the row.
-     Horizontal position is fixed via CSS (right: 60px).
-     On mouseleave: hide preview and reset currentSrc.
-  ─────────────────────────────────────────────────────── */
   bindServiceHovers();
 
   /* ── Mobile carousel ────────────────────────────────────*/
@@ -261,11 +241,11 @@
     swipeHint.className = 'mobile-swipe-hint';
     swipeHint.innerHTML = `
       <div class="swipe-arrow" id="prevBtn">
-        <img src="/img/swiperp.svg" alt="Previous" style="width:36px;height:36px;filter:brightness(0) invert(1);opacity:0.6;" />
+        <img src="img/swiperp.svg" alt="Previous" style="width:36px;height:36px;filter:brightness(0) invert(1);opacity:0.6;" />
       </div>
       <span class="swipe-label">SWIPE FOR MORE</span>
       <div class="swipe-arrow" id="nextBtn">
-        <img src="/img/swipern.svg" alt="Next" style="width:36px;height:36px;filter:brightness(0) invert(1);opacity:0.6;" />
+        <img src="img/swipern.svg" alt="Next" style="width:36px;height:36px;filter:brightness(0) invert(1);opacity:0.6;" />
       </div>
     `;
 
@@ -284,6 +264,21 @@
     carousel.appendChild(dotsWrap);
 
     servicesLeft.appendChild(carousel);
+
+    // Bottom icons
+    const bottomIcons = document.createElement('div');
+    bottomIcons.className = 'mobile-bottom-icons';
+    bottomIcons.innerHTML = `
+      <div class="mobile-bottom-icon">
+        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <span>CODE</span>
+      </div>
+      <div class="mobile-bottom-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        <span>DESIGN</span>
+      </div>
+    `;
+    servicesLeft.appendChild(bottomIcons);
 
     // ── Carousel logic ──
     currentIndex = 0;
@@ -342,3 +337,5 @@
   preview.classList.add('hidden');
 
 })();
+
+

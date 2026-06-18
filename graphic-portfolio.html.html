@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphic Design Portfolio – Tailored Edits</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR — same as main page ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <div class="nav-logo">
+        <img src="img/te-logo.png" alt="TE Logo" height="52" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">HOME</a></li>
+        <li><a href="#" class="nav-link">WEB PORTFOLIO</a></li>
+        <li><a href="#" class="nav-link active">GRAPHIC PORTFOLIO</a></li>
+        <li><a href="#" class="nav-link">WHO AM I?</a></li>
+        <li><a href="#" class="nav-link">HIRE ME NOW!</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== RIGHT SIDE DOCK — graphic icon shown as active/pressed ===== -->
+  <div class="side-dock">
+    <div class="dock-item">
+      <div class="dock-tooltip">VIEW WEB PORTFOLIO</div>
+      <a href="#" class="dock-btn">
+        <img src="img/svgs (1).svg" alt="Web Portfolio" class="dock-svg" />
+      </a>
+    </div>
+    <div class="dock-item">
+      <div class="dock-tooltip">VIEW GRAPHIC PORTFOLIO</div>
+      <a href="#" class="dock-btn active">
+        <img src="img/svgs (2).svg" alt="Graphic Portfolio" class="dock-svg dock-svg-active" />
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== PAGE WRAPPER ===== -->
+  <div class="page-wrapper" id="pageWrapper">
+
+    <!-- ===== TOPBAR ===== -->
+    <header class="topbar">
+      <div class="topbar-logo">
+        <img src="img/te-logo.png" alt="TE Logo" height="48" />
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open Menu">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <!-- ===== PORTFOLIO HERO ===== -->
+    <section class="portfolio-hero">
+      <div class="portfolio-hero-content">
+        <h1 class="portfolio-hero-title" data-reveal>
+          <span class="script-welcome">Welcome to</span><br>
+          <span class="script-my">My</span><br>
+          <span class="title-gray">GRAPHIC</span> <span class="title-gold">DESIGN</span><br>
+          <span class="portfolio-subtitle"><span class="title-white">PORT</span><span class="title-gold">FOLIO</span></span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO SECTION ===== -->
+    <section class="portfolio-section">
+
+      <div class="services-tabs" data-reveal>
+        <button class="tab-btn active" data-filter="all">ALL</button>
+        <button class="tab-btn" data-filter="flyers">FLYERS</button>
+        <button class="tab-btn" data-filter="posters">POSTERS</button>
+        <button class="tab-btn" data-filter="menu">MENU DESIGNS</button>
+        <button class="tab-btn" data-filter="social">SOCIAL MEDIA</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+        <div class="portfolio-item" data-category="flyers" data-img="img/portfolio-1.jpg" data-reveal>
+          <div class="portfolio-img-wrap">
+            <img src="img/portfolio-1.jpg" alt="Sports Shoes Flyer" />
+            <div class="portfolio-blob"></div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="flyers" data-img="img/portfolio-2.jpg" data-reveal data-reveal-delay="80">
+          <div class="portfolio-img-wrap">
+            <img src="img/portfolio-2.jpg" alt="Sports Shoes Flyer" />
+            <div class="portfolio-blob"></div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="posters" data-img="img/portfolio-3.jpg" data-reveal data-reveal-delay="160">
+          <div class="portfolio-img-wrap">
+            <img src="img/portfolio-3.jpg" alt="Sports Shoes Poster" />
+            <div class="portfolio-blob"></div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="menu" data-img="img/portfolio-4.jpg" data-reveal>
+          <div class="portfolio-img-wrap">
+            <img src="img/portfolio-4.jpg" alt="Menu Design" />
+            <div class="portfolio-blob"></div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="social" data-img="img/portfolio-5.jpg" data-reveal data-reveal-delay="80">
+          <div class="portfolio-img-wrap">
+            <img src="img/portfolio-5.jpg" alt="Social Media Post" />
+            <div class="portfolio-blob"></div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="flyers" data-img="img/portfolio-6.jpg" data-reveal data-reveal-delay="160">
+          <div class="portfolio-img-wrap">
+            <img src="img/portfolio-6.jpg" alt="Sports Shoes Flyer" />
+            <div class="portfolio-blob"></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div><!-- /page-wrapper -->
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&#x2715;</button>
+    <img src="" alt="Full size preview" id="lightboxImg" />
+  </div>
+
+  <script src="script.js"></script>
+  <script src="portfolio.js"></script>
+</body>
+
+</html>
